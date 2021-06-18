@@ -1,4 +1,4 @@
-<%= form_with(model: wallpaper) do |form| %>
+<%= form_with model: wallpaper, :html => {:class => "sm:w-full md:w-1/2 flex flex-col items-center"} do |form| %>
   <% if wallpaper.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(wallpaper.errors.count, "error") %> prohibited this wallpaper from being saved:</h2>
@@ -11,27 +11,35 @@
     </div>
   <% end %>
 
+  <div class="space-y-3 sm:w-full md:w-2/3 rounded-md p-5 border-2 border-gray-300 mb-5">
+
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: "text-gray-500 font-semibold" %>
+    <%= form.text_field :name, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "wallpaper name" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: "text-gray-500 font-semibold" %>
+    <%= form.text_area :description, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "wallpaper description" %>
   </div>
 
   <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
+    <%= form.label :category, class: "text-gray-500 font-semibold" %>
+    <%= form.text_field :category, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "wallpaper category" %>
   </div>
 
-  <div class="field">
-    <%= form.label :wallpaper %>
-    <%= form.text_field :wallpaper %>
+<div class="field">
+  <%= form.label :wallpaper, class: "text-gray-500 font-semibold" %>
+  <div class="mt-1 flex rounded-md shadow-sm">
+    <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+      http://
+    </span>
+    <%= form.text_field :wallpaper, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "https://wallpaper.com" %>
   </div>
+</div>
 
+</div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "bg-indigo-600 px-5 py-2 text-lg font-semibold text-white border-2 rounded-md shadow-md cursor-pointer hover:border-indigo-600 hover:bg-white hover:text-indigo-600 transition duration-300" %>
   </div>
 <% end %>

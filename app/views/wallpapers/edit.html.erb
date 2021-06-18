@@ -1,6 +1,15 @@
-<h1>Editing Wallpaper</h1>
+<div class="min-h-screen">
+  <div class="m-10 p-5 w-1/9 bg-white rounded-md shadow-lg flex flex-col items-center">
+    <h1 class="text-3xl mb-5 font-semibold text-indigo-500">Wallpaper Space</h1>
 
-<%= render 'form', wallpaper: @wallpaper %>
-
-<%= link_to 'Show', @wallpaper %> |
-<%= link_to 'Back', wallpapers_path %>
+    <div class="flex flex-col items-center w-full">
+      <%= render 'form' , wallpaper: @wallpaper %>
+    </div>
+    <a class="flex flex-row py-1 pr-1 transition duration-300 font-semibold items-center" href="<%= wallpapers_path %>">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+      </svg>
+      Back
+    </a>
+  </div>
+</div>
