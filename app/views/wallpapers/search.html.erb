@@ -57,7 +57,11 @@
 
 
 </header>
-<h2>Results for: "<%= params[:search] %>"</h2>
+<h2 class="text-xl text-gray-700 mt-10 ml-5">Results for: "<%= params[:search] %>"</h2>
+
+<% if @results.size() == 0 %>
+    <h2 class="text-3xl text-gray-700 mt-10 ml-5 font-semibold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">"<%= params[:search] %>" not found :(</h2>
+<% else %>
 <ul role="list" class="p-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
     <% @results.each do |result| %>
         <li class="relative">
@@ -77,3 +81,4 @@
         </li>
         <% end %>
 </ul>
+ <% end %>
