@@ -1,7 +1,7 @@
 # README
 
 
-<h3>Link access: </h3> https://wallpaperspace.herokuapp.com/wallpapers
+<h3>Link access: https://wallpaperspace.herokuapp.com/wallpapers</h3> 
 
 
 This README would normally document whatever steps are necessary to get the
