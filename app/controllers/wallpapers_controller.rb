@@ -76,12 +76,11 @@ puts "TEST #{params[:wallpaper]}"
   def upload
     uploaded_file = params[:wallpaper][:wallpaper]
 
-    return unless uploaded_file.original_filename
+    return unless defined?(uploaded_file.original_filename)
 
     file_path = Rails.root.join('public', 'uploads', uploaded_file.original_filename)
 
-
-    File.open(file_path, 'wb') do |file|
+    File.open(Rails.root.join('public', 'uploads', uploaded_file.original_filename), 'wb') do |file|
       file.write(uploaded_file.read)
     end
 
