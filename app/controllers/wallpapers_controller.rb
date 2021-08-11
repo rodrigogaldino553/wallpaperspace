@@ -21,7 +21,7 @@ class WallpapersController < ApplicationController
   def create
     upload
     @wallpaper = Wallpaper.new(wallpaper_params)
-puts "TEST #{params[:wallpaper]}"
+    puts "TEST #{params[:wallpaper]}"
     respond_to do |format|
       if @wallpaper.save
         format.html { redirect_to @wallpaper, notice: 'Wallpaper was successfully created.' }
@@ -77,13 +77,16 @@ puts "TEST #{params[:wallpaper]}"
     uploaded_file = params[:wallpaper][:wallpaper]
 
     return unless defined?(uploaded_file.original_filename)
-
+# TODO: make a verification if image format is valid(now, it can upload any files type, and we want that only images to be sent)
     file_path = Rails.root.join('public', 'uploads', uploaded_file.original_filename)
-
+# here put upload to drive system
     File.open(Rails.root.join('public', 'uploads', uploaded_file.original_filename), 'wb') do |file|
       file.write(uploaded_file.read)
     end
-
+    
+# here get image on drive url
+# here we save the url on our database:
+# params[:wallpaper][:wallpaper] = 'url'
      params[:wallpaper][:wallpaper] = "/uploads/#{uploaded_file.original_filename}"# file_path # Maybe its needly add something before file_path, example "application_link/file_path"
   end
 

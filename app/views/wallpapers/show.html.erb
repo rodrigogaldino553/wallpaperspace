@@ -3,7 +3,7 @@
 </p>
 
 <div>
-  <a class="fixed bottom-5 right-5 rounded-full shadow-lg bg-indigo-700 p-5 hover:bg-indigo-500 transition duration-300"
+  <a class="fixed bottom-5 right-5 rounded-full shadow-lg bg-indigo-700 p-5 hover:bg-indigo-500 transition duration-300 z-10"
     href="<%= @wallpaper.wallpaper %>" download=""><svg class="w-12 h-12" fill="none" stroke="white" viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -11,7 +11,7 @@
     </svg></a>
 </div>
 <div class="min-h-screen flex-col sm:flex sm:block items-center justify-center">
-  <div class="m-2 sm:mx-3 sm:my-3 md:m-10 p-3 md:p-5 w-1/9 bg-white rounded-md shadow-lg flex flex-col items-center">
+  <div class="m-2 sm:mx-3 sm:my-3 md:m-10 p-3 md:p-5 w-1/9 bg-white rounded-md shadow-lg flex flex-col items-center absolute top-1/2 transform -translate-y-1/2 z-0">
     <h1 class="text-3xl mb-5 font-semibold text-indigo-500">Wallpaper Space</h1>
     <div class="w-2/3 rounded-lg shadow-lg">
       <img class="w-full h-full rounded-lg shadow-lg object-cover" src="<%= @wallpaper.wallpaper %>" alt="<%= @wallpaper.name %>">
