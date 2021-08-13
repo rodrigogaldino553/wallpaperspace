@@ -1,4 +1,4 @@
-<%= form_with model: wallpaper, :html => {:class => "sm:w-full md:w-1/2 flex flex-col items-center"} do |form| %>
+<%= form_with model: wallpaper, :html => {:class => "sm:w-full md:w-1/2 flex flex-col items-center"}, multipart: true do |form| %>
   <% if wallpaper.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(wallpaper.errors.count, "error") %> prohibited this wallpaper from being saved:</h2>
@@ -31,10 +31,10 @@
 <div class="field">
   <%= form.label :wallpaper, class: "text-gray-500 font-semibold" %>
   <div class="mt-1 flex rounded-md shadow-sm">
-    <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+    <!--span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
       http://
-    </span>
-    <%= form.text_field :wallpaper, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "https://wallpaper.com" %>
+    </span-->
+    <!--%= # form.text_field :wallpaper, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "https://wallpaper.com" %-->
   </div>
   <%= form.file_field :wallpaper %>
 </div>
