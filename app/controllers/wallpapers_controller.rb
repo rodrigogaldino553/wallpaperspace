@@ -19,7 +19,7 @@ class WallpapersController < ApplicationController
 
   # POST /wallpapers or /wallpapers.json
   def create
-    upload
+    # upload
     @wallpaper = Wallpaper.new(wallpaper_params)
     puts "TEST #{params[:wallpaper]}"
     respond_to do |format|
@@ -73,7 +73,7 @@ class WallpapersController < ApplicationController
   end
 
   # Get hard files sent by users and save them on disk
-  def upload
+   def upload
     uploaded_file = params[:wallpaper][:wallpaper]
 
     return unless defined?(uploaded_file.original_filename)
