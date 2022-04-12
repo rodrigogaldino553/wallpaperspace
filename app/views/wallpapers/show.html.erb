@@ -14,7 +14,9 @@
   <div class="m-2 sm:mx-3 sm:my-3 md:m-10 p-3 md:p-5 w-1/9 bg-white rounded-md shadow-lg flex flex-col items-center">
     <h1 class="text-3xl mb-5 font-semibold text-indigo-500">Wallpaper Space</h1>
     <div class="w-2/3 rounded-lg shadow-lg">
-      <img class="w-full h-full rounded-lg shadow-lg object-cover" src="<%= @wallpaper.wallpaper %>" alt="<%= @wallpaper.name %>">
+      <% if @wallpaper.picture.attached? %>
+        <%= image_tag @wallpaper.picture, class: "w-full h-full rounded-lg shadow-lg object-cover" %>
+      <% end %>
     </div>
 
     <div class="my-10 w-2/3">

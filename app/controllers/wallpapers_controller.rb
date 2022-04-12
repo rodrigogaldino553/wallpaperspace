@@ -19,9 +19,9 @@ class WallpapersController < ApplicationController
 
   # POST /wallpapers or /wallpapers.json
   def create
-    upload
+    # upload
     @wallpaper = Wallpaper.new(wallpaper_params)
-puts "TEST #{params[:wallpaper]}"
+# puts "TEST #{params[:wallpaper]}"
     respond_to do |format|
       if @wallpaper.save
         format.html { redirect_to @wallpaper, notice: 'Wallpaper was successfully created.' }
@@ -89,6 +89,6 @@ puts "TEST #{params[:wallpaper]}"
 
   # Only allow a list of trusted parameters through.
   def wallpaper_params
-    params.require(:wallpaper).permit(:name, :description, :category, :wallpaper)
+    params.require(:wallpaper).permit(:name, :description, :category, :wallpaper, :picture)
   end
 end

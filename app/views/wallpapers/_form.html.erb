@@ -28,6 +28,11 @@
     <%= form.text_field :category, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "wallpaper category" %>
   </div>
 
+  <div class="field">
+    <%= form.label :picture, class: "text-gray-500 font-semibold" %>
+    <%= form.file_field :picture, class: "w-full px-3 py-2 shadow-md rounded-md border-2 boder-gray-500 bg-gray-100 outline-none hover:bg-white hover:border-indigo-500 transition duration-250", placeholder: "wallpaper name" %>
+  </div>
+
 <div class="field">
   <%= form.label :wallpaper, class: "text-gray-500 font-semibold" %>
   <div class="mt-1 flex rounded-md shadow-sm">

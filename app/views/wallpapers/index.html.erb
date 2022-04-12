@@ -68,7 +68,11 @@
       <li class="relative">
         <a href="/wallpapers/<%= wallpaper.id %>"
           class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
-          <img class="w-full h-36 object-cover" src="<%= wallpaper.wallpaper %>">
+          <% if wallpaper.picture.attached? %>
+            <%= image_tag wallpaper.picture, class: "w-full h-36 object-cover" %>
+          <% else %>
+            <img class="w-full h-36 object-cover" src="<%= wallpaper.wallpaper %>">
+          <% end %>
           <button type="button" class="absolute inset-0 focus:outline-none">
             <span class="sr-only">View details for IMG_4985.HEIC</span>
           </button>
