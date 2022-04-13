@@ -19,9 +19,8 @@ class WallpapersController < ApplicationController
 
   # POST /wallpapers or /wallpapers.json
   def create
-    # upload
     @wallpaper = Wallpaper.new(wallpaper_params)
-    puts "TEST #{params[:wallpaper]}"
+    @wallpaper.wallpaper.filename = @wallpaper.name
     respond_to do |format|
       if @wallpaper.save
         format.html { redirect_to @wallpaper, notice: 'Wallpaper was successfully created.' }
